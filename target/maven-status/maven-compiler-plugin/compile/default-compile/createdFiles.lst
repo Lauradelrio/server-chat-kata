@@ -1,0 +1,7 @@
+resources/HelloWorldResource.class
+health/TemplateHealthCheck.class
+core/Persistence.class
+ServerConfiguration.class
+core/Messages.class
+core/Message.class
+ServerService.class
