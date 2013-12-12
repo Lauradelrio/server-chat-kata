@@ -29,7 +29,7 @@ public class HelloWorldResource {
     public Messages sayHello(@QueryParam("name") Optional<String> name) {
 //       return new Message(counter.incrementAndGet(), String.format(template, name.or(defaultName)));
         persistence.addMsg(new Message("Laura", "Hello, Stranger!"));                 // Ejemplo de inicialización
-        return new Messages(persistence.getSizeMsg(),persistence.getMsgList());
+        return new Messages(persistence.getMsgList(),persistence.getSizeMsg());
     }
 
     @POST

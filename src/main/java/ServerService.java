@@ -19,7 +19,7 @@ public class ServerService extends Service<ServerConfiguration> {
 
     @Override
     public void initialize(Bootstrap<ServerConfiguration> bootstrap) {
-        bootstrap.setName("hello-world");
+        bootstrap.setName("server");
     }
 
     @Override

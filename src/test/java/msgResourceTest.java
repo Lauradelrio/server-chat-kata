@@ -1,11 +1,14 @@
 import core.Message;
 import core.Messages;
 import core.Persistence;
+import org.junit.Test;
 import resources.HelloWorldResource;
 import com.yammer.dropwizard.testing.ResourceTest;
 
+import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 
+import static org.fest.assertions.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 
 public class msgResourceTest extends ResourceTest {
@@ -20,14 +23,15 @@ public class msgResourceTest extends ResourceTest {
         //addResource(new HelloWorldResource("Hello, %s!", "Stranger")); //añade recurso que esta funcionando
         addResource(new HelloWorldResource("Hello, %s!", "Stranger", persistence));
     }
-/*
-    @Test
+/*    @Test
     public void simpleResourceTest() throws Exception {
         msgArrayList.add(msg);
         msgList = new Messages(0, msgArrayList);
         Messages hhh = client().resource("/chat-kata/api/chat").type(MediaType.APPLICATION_JSON).get(Messages.class);
         assertThat(hhh).isEqualTo(msgList);
     }*/
+
+
 
 /*    @Test
     public void postTest() throws Exception{
