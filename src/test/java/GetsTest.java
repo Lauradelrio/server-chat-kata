@@ -44,7 +44,7 @@ public class GetsTest extends ResourceTest {
         msgArrayList.add(new Message("Laura","Hola"));
         msgArrayList.add(new Message("Laura","Que tal"));
         when (persistence.getMsgList(0)).thenReturn(msgArrayList);
-        when (persistence.getSizeMsg()).thenReturn(2);
+        when (persistence.getSizeMsg()).thenReturn(msgArrayList.size());
         msgList=new Messages(msgArrayList,msgArrayList.size());
         Messages msgListResult = client().resource("/chat-kata/api/chat").type(MediaType.APPLICATION_JSON).get(Messages.class);
         assertThat(msgListResult).isEqualTo(msgList);
