@@ -22,12 +22,12 @@ public class ServerResource {
 
     @GET
     @Timed
-    public Messages sayHello(@QueryParam("next_seq") Optional<Integer> nextSeq) {
+    public Messages getServer(@QueryParam("next_seq") Optional<Integer> nextSeq) {
         return new Messages(persistence.getMsgList(nextSeq.or(defaultNextSeq)),persistence.getSizeMsg());
     }
 
     @POST
-    public Response parameterDemoMethod(Message msg) {
+    public Response postServer(Message msg) {
         if(persistence.isMsgCorrect(msg)){
            persistence.addMsg(msg);
            return Response.status(Response.Status.OK).build();
