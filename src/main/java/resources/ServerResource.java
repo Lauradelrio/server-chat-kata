@@ -1,13 +1,14 @@
 package resources;
 
-import core.*;
 import com.google.common.base.Optional;
 import com.yammer.metrics.annotation.Timed;
+import core.Message;
+import core.Messages;
+import core.Persistence;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.concurrent.atomic.AtomicLong;
 
 @Path("/chat-kata/api/chat")
 @Produces(MediaType.APPLICATION_JSON)
