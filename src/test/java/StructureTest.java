@@ -19,21 +19,16 @@ import static org.hamcrest.core.Is.is;
 
 public class StructureTest {
 
-    /* Message msg = new Message("Laura", "Hola");
+     Message msg = new Message("Laura", "Hola");
      ArrayList<Message> msgArrayList = new ArrayList<Message>();
      Messages msgList;
-*/
     @Test
     public void serializeMessageToJSON() throws Exception {
-         Message msg = new Message("Laura", "Hola");
         assertThat("a Message can be serialized to JSON", asJson(msg), is(equalTo(jsonFixture("message.json"))));
     }
 
     @Test
     public void serializeListMessagesToJSON() throws Exception {
-         Message msg = new Message("Laura", "Hola");
-         ArrayList<Message> msgArrayList = new ArrayList<Message>();
-         Messages msgList;
         msgArrayList.add(msg);
         msgList = new Messages(msgArrayList, 1);
         assertThat("a Messages can be serialized to JSON", asJson(msgList), is(equalTo(jsonFixture("messages.json"))));
@@ -41,16 +36,13 @@ public class StructureTest {
 
     @Test
     public void deserializesMessageFromJSON() throws Exception {
-         Message msg = new Message("Laura", "Hola");
         assertThat("a Message can be deserialized from JSON",fromJson(jsonFixture("message.json"), Message.class), is(msg));
     }
 
-/*    @Test
+    @Test
     public void deserializesListMessagesFromJSON() throws Exception {
-         Message msg = new Message("Laura", "Hola");
-         ArrayList<Message> msgArrayList = new ArrayList<Message>();
-         Messages msgList;
+        msgArrayList.add(msg);
         msgList = new Messages(msgArrayList,1);
         assertThat("a Messages can be deserialized from JSON",fromJson(jsonFixture("messages.json"), Messages.class), is(msgList));
-    }*/
+    }
 }

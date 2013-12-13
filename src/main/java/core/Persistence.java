@@ -25,7 +25,19 @@ public class Persistence {
         return msgList.size();
     }
 
-    public ArrayList<Message> getMsgList(){
-        return msgList;
+    public ArrayList<Message> getMsgList(int initSeq){
+        ArrayList<Message> msgListResult;
+        if(initSeq<msgList.size() && initSeq>=0){
+            msgListResult = new ArrayList<Message>();
+            for(int i=initSeq;i<msgList.size();i++)
+                msgListResult.add(msgList.get(i));
+        } else msgListResult = new ArrayList<Message>();
+        return msgListResult;
+    }
+
+    public boolean isMsgCorrect(Message msg){
+       boolean result=false;
+        if(msg!=null && !msg.getMessage().equals("") && !msg.getNick().equals("")) result=true;
+        return result;
     }
 }

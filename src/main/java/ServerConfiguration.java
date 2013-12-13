@@ -10,17 +10,9 @@ import com.yammer.dropwizard.config.Configuration;
  */
 public class ServerConfiguration extends Configuration {
 
-    @JsonProperty
-    private String template="Hello, %s!";
+    private int defaultNextSeq=0;
 
-    @JsonProperty
-    private String defaultName = "Stranger";
-
-    public String getTemplate() {
-        return template;
-    }
-
-    public String getDefaultName() {
-        return defaultName;
+    public int getDefaultNextSeq() {
+        return defaultNextSeq;
     }
 }
